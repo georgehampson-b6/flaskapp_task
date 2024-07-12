@@ -2,7 +2,7 @@ terraform {
   required_providers {
     heroku = {
       source  = "heroku/heroku"
-      version = "~> 5.2.8"  # Use a compatible version
+      version = "~> 5.2.8"
     }
   }
 }
@@ -17,16 +17,8 @@ resource "heroku_app" "app" {
   region = "us"
 
   config_vars = {
-    APP_VERSION = "0.0.3"
-    BUILD_DATE  = "2024-07-12"  # Replace with the actual build date
-  }
-}
-
-resource "heroku_build" "build" {
-  app_id = heroku_app.app.id
-
-  source {
-    url = "https://github.com/georgehampson-b6/flaskapp/app/archive/refs/heads/main.tar.gz"  # Replace with your repository
+    APP_VERSION = "0.0.4"
+    BUILD_DATE  = "2024-07-12"
   }
 }
 
@@ -34,5 +26,5 @@ resource "heroku_formation" "web" {
   app_id     = heroku_app.app.id
   type       = "web"
   quantity   = 1
-  size       = "free"
+  size       = "Eco"
 }
