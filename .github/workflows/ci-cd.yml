@@ -47,4 +47,6 @@ jobs:
         context: .
         file: Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
+        build-args: |
+          VERSION=${{ github.run_number }}
+        tags: ${{ secrets.DOCKER_USERNAME }}/flaskapp:${{ github.run_number }}
