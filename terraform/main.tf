@@ -26,7 +26,7 @@ resource "heroku_build" "build" {
   app_id = heroku_app.app.id
 
   source {
-    url = "https://github.com/georgehampson-b6/flaskapp_task/tree/main/app"  # Replace with your repository
+    url = "https://github.com/georgehampson-b6/flaskapp/app/archive/refs/heads/main.tar.gz"  # Replace with your repository
   }
 }
 
