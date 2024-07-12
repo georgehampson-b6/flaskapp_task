@@ -49,4 +49,5 @@ jobs:
         push: true
         build-args: |
           VERSION=${{ github.run_number }}
+          BUILD_DATE=${{ github.event.head_commit.timestamp }}
         tags: ${{ secrets.DOCKER_USERNAME }}/flaskapp:${{ github.run_number }}

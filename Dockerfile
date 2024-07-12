@@ -8,9 +8,11 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 
-# Set the environment variable for version number
+# Set the environment variables for version number and build date
 ARG VERSION
+ARG BUILD_DATE
 ENV APP_VERSION=$VERSION
+ENV BUILD_DATE=$BUILD_DATE
 
 
 EXPOSE 5000
