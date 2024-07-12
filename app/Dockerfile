@@ -15,8 +15,6 @@ ENV APP_VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
 
-EXPOSE 5000
-
 
 # Define environment variable
 ENV FLASK_APP=app.py
